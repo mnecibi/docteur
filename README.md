@@ -1,4 +1,4 @@
-# Docteur
+# GeneralisteTN
 
 To start your Phoenix server:
 

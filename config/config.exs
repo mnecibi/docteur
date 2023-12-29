@@ -7,19 +7,19 @@
 # General application configuration
 import Config
 
-config :docteur,
-  ecto_repos: [Docteur.Repo],
+config :generaliste_tn,
+  ecto_repos: [GeneralisteTN.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :docteur, DocteurWeb.Endpoint,
+config :generaliste_tn, GeneralisteTNWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Phoenix.Endpoint.Cowboy2Adapter,
   render_errors: [
-    formats: [html: DocteurWeb.ErrorHTML, json: DocteurWeb.ErrorJSON],
+    formats: [html: GeneralisteTNWeb.ErrorHTML, json: GeneralisteTNWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: Docteur.PubSub,
+  pubsub_server: GeneralisteTN.PubSub,
   live_view: [signing_salt: "6d6r4tQf"]
 
 # Configures the mailer
@@ -29,7 +29,7 @@ config :docteur, DocteurWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :docteur, Docteur.Mailer, adapter: Swoosh.Adapters.Local
+config :generaliste_tn, GeneralisteTN.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,

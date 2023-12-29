@@ -1,7 +1,7 @@
-defmodule Docteur.ProfileFixtures do
+defmodule GeneralisteTN.ProfileFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `Docteur.Profile` context.
+  entities via the `GeneralisteTN.Profile` context.
   """
 
   def unique_client_email, do: "client#{System.unique_integer()}@example.com"
@@ -18,7 +18,7 @@ defmodule Docteur.ProfileFixtures do
     {:ok, client} =
       attrs
       |> valid_client_attributes()
-      |> Docteur.Profile.register_client()
+      |> GeneralisteTN.Profile.register_client()
 
     client
   end

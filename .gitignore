@@ -23,7 +23,7 @@ erl_crash.dump
 /tmp/
 
 # Ignore package tarball (built via "mix hex.build").
-docteur-*.tar
+generaliste_tn-*.tar
 
 # Ignore assets that are produced by build tools.
 /priv/static/assets/
@@ -36,3 +36,5 @@ npm-debug.log
 /assets/node_modules/
 
 data/
+
+.elixir_ls

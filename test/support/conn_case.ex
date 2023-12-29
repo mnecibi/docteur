@@ -1,4 +1,4 @@
-defmodule DocteurWeb.ConnCase do
+defmodule GeneralisteTNWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule DocteurWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use DocteurWeb.ConnCase, async: true`, although
+  by setting `use GeneralisteTNWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -20,19 +20,19 @@ defmodule DocteurWeb.ConnCase do
   using do
     quote do
       # The default endpoint for testing
-      @endpoint DocteurWeb.Endpoint
+      @endpoint GeneralisteTNWeb.Endpoint
 
-      use DocteurWeb, :verified_routes
+      use GeneralisteTNWeb, :verified_routes
 
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import DocteurWeb.ConnCase
+      import GeneralisteTNWeb.ConnCase
     end
   end
 
   setup tags do
-    Docteur.DataCase.setup_sandbox(tags)
+    GeneralisteTN.DataCase.setup_sandbox(tags)
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 
@@ -45,7 +45,7 @@ defmodule DocteurWeb.ConnCase do
   test context.
   """
   def register_and_log_in_client(%{conn: conn}) do
-    client = Docteur.ProfileFixtures.client_fixture()
+    client = GeneralisteTN.ProfileFixtures.client_fixture()
     %{conn: log_in_client(conn, client), client: client}
   end
 
@@ -55,7 +55,7 @@ defmodule DocteurWeb.ConnCase do
   It returns an updated `conn`.
   """
   def log_in_client(conn, client) do
-    token = Docteur.Profile.generate_client_session_token(client)
+    token = GeneralisteTN.Profile.generate_client_session_token(client)
 
     conn
     |> Phoenix.ConnTest.init_test_session(%{})

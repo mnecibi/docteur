@@ -1,4 +1,4 @@
-defmodule Docteur.Repo.Migrations.CreateClientsAuthTables do
+defmodule GeneralisteTN.Repo.Migrations.CreateClientsAuthTables do
   use Ecto.Migration
 
   def change do
